@@ -790,7 +790,7 @@
 #define MIN_PROBE_EDGE 10
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 5000
+#define XY_PROBE_SPEED 8000
 //#define XY_PROBE_SPEED 8000
 
 // Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
@@ -992,7 +992,7 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1029,7 +1029,7 @@
 #if ENABLED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 5
+  #define GRID_MAX_POINTS_X 3
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
@@ -1100,12 +1100,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
-  #define UBL_PROBE_PT_1_X 39       // Probing points for 3-Point leveling of the mesh
-  #define UBL_PROBE_PT_1_Y 180
-  #define UBL_PROBE_PT_2_X 39
-  #define UBL_PROBE_PT_2_Y 20
-  #define UBL_PROBE_PT_3_X 180
-  #define UBL_PROBE_PT_3_Y 20
+  #define PROBE_PT_1_X 39       // Probing points for 3-Point leveling of the mesh
+  #define PROBE_PT_1_Y 180
+  #define PROBE_PT_2_X 39
+  #define PROBE_PT_2_Y 20
+  #define PROBE_PT_3_X 180
+  #define PROBE_PT_3_Y 20
   //#define PROBE_PT_1_X 15
   //#define PROBE_PT_1_Y 180
   //#define PROBE_PT_2_X 15
@@ -1168,8 +1168,10 @@
 #endif
 
 // Homing speeds (mm/m)
+//#define HOMING_FEEDRATE_XY (15*60)
+//#define HOMING_FEEDRATE_Z  (4*60)
 #define HOMING_FEEDRATE_XY (15*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_Z  (6*60)
 
 // @section calibrate
 
